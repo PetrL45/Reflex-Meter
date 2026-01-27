@@ -1,0 +1,11 @@
+.Home{
+    flex-direction: column;
+    flex: 1;                
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: lightskyblue;
+}

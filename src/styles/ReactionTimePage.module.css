@@ -1,0 +1,47 @@
+.container{
+    flex-grow: 1;
+}
+.testContainer{
+    background-color: #047fd7;
+    height: 60%;
+    align-content: center;
+    cursor: pointer;
+}
+.testContainer h3{
+    font-size: 5rem;
+    margin: 0;
+}
+.testContainer p{
+    font-size: 2rem;
+}
+.statistic{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    margin: 0 10em;
+    gap: 10px;
+}
+.statistic p{
+    text-align: left;
+    padding: 10px;
+}
+.statistic p:first-child{
+    align-content: center;
+}
+.average{
+    background-color: rgb(47, 47, 47);
+    border-radius: 15px;
+    grid-row: 2/3;
+    grid-column: 1;
+}
+.best{
+    background-color: rgb(47, 47, 47);
+    border-radius: 15px;
+    grid-column: 2 / 3;
+    grid-row: 2/3;
+}
+.attemps{
+    background-color: rgb(47, 47, 47);
+    border-radius: 15px;
+    grid-row: 2/3;
+}
