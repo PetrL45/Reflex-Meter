@@ -2,31 +2,50 @@
     flex-grow: 1;
 }
 .testContainer{
-    background-color: #047fd7;
     height: 60%;
-    align-content: center;
     cursor: pointer;
 }
-.testContainer h3{
+.testContainer > *{
+    align-content: center;
+    height: 100%;
+}
+.testContainer h4{
     font-size: 5rem;
     margin: 0;
 }
 .testContainer p{
     font-size: 2rem;
 }
+.idle, .clicked{
+    background-color: #047fd7;
+}
+.waiting{
+    background-color: rgb(253, 99, 99);
+}
+.ready{
+    background-color: rgb(86, 215, 86);
+}
+.early{
+    background-color: rgb(251, 150, 87);
+}
 .statistic{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr;
     margin: 0 10em;
     gap: 10px;
 }
 .statistic p{
     text-align: left;
     padding: 10px;
+    margin-left: 12px;
 }
 .statistic p:first-child{
     align-content: center;
+}
+.stat{
+    margin-top: -20px;
+    font-size: 24px
 }
 .average{
     background-color: rgb(47, 47, 47);
