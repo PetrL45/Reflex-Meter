@@ -64,3 +64,12 @@
     border-radius: 15px;
     grid-row: 2/3;
 }
+.backBtn{
+    position: absolute;
+    top: 20px;
+    left: 2%;
+    cursor: auto;
+    background-color: #318ed0;
+    padding: .5em .5em .25em;
+    border-radius: 10px;
+}

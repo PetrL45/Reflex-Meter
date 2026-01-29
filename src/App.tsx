@@ -10,7 +10,7 @@ function App() {
     <StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route index element={<HomePage />} />
+                <Route index path='/' element={<HomePage />} />
                 <Route path='/test/ReactionTime' element={<ReactionTimePage />}/>
                 <Route path='/training/Aim' element={<AimTrainer />}/>
             </Routes>

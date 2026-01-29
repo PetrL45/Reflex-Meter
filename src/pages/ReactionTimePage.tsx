@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import reactionStyles from "../styles/ReactionTimePage.module.css"
 import { type GameState } from "../types";
+import { Link } from "react-router";
+import { Home } from "lucide-react";
 
 const ReactionTimePage = () => {
     const [startTime, setStartTime] = useState(0)
@@ -77,6 +79,9 @@ const ReactionTimePage = () => {
 
     return(
         <div className={reactionStyles.container}>
+            <Link to="/" className={reactionStyles.backBtn}> 
+                <Home />
+            </Link>
             <div className={reactionStyles.testContainer} onClick={clickHandler}>
                 {currentState === 'idle' && (
                     <div className={reactionStyles.idle}>
