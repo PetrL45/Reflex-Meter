@@ -55,16 +55,20 @@ const ReactionTimePage = () => {
     }
 
     const handleValidReaction = () => {
+        const newReactionTime = Date.now() - startTime
+        const newAttempts = attemps + 1 
+        const newTotalTime = totalTime + newReactionTime
+        const newAvg = newTotalTime / newAttempts  
+
         setCurrentState('clicked')
-        setReactionTime(Date.now() - startTime)
-        if(bestTime === 0 || reactionTime < bestTime){
-            setBestTime(reactionTime)
-        }
-        const newTotalTime = totalTime + reactionTime
-        const newAttempts = attemps + 1
+        setReactionTime(newReactionTime)
         setTotalTime(newTotalTime)
-        setAttemps(a => a + 1)
-        setAvg(newTotalTime / newAttempts)
+        setAttemps(newAttempts)
+        setAvg(newAvg)
+
+        if(bestTime === 0 || newReactionTime < bestTime){
+            setBestTime(newReactionTime)
+        }
     }
 
     const handleReset = () => {
@@ -94,7 +98,7 @@ const ReactionTimePage = () => {
                 )}
                 {currentState === 'clicked' &&(
                     <div className={reactionStyles.clicked}>
-                        <h4>{reactionTime}ms</h4>
+                        <h4>{reactionTime} ms</h4>
                         <p>Click to try again</p>
                     </div>
                 )}
@@ -109,11 +113,15 @@ const ReactionTimePage = () => {
                 <p>⚡Statistics</p>
                 <div className={reactionStyles.average}>
                     <p>⏱️Average</p>
-                    <p className={reactionStyles.stat}>{avg}</p>
+                    <p className={reactionStyles.stat}>
+                        {attemps === 0 ? '—' : avg + " ms"}
+                    </p>
                 </div>
                 <div className={reactionStyles.best}>
                     <p>⚡Best</p>
-                    <p className={reactionStyles.stat}>{bestTime}</p>
+                    <p className={reactionStyles.stat}>
+                        {attemps === 0 ? '—' : bestTime + " ms"}
+                    </p>
                 </div>
                 <div className={reactionStyles.attemps}>
                     <p>Attemps</p>
